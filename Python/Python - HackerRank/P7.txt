@@ -1,0 +1,48 @@
+Link:https://www.hackerrank.com/challenges/python-lists/problem?isFullScreen=true
+
+
+
+
+solution:
+
+
+if __name__ == '__main__':
+    
+    def edit_list(command,the_list):
+        
+        parts = command.split()
+        
+        if 'append' in command:
+            num=int(parts[-1])
+            the_list.append(num)
+            
+        elif 'insert' in command:
+            num=int(parts[2])
+            index=int(parts[1])
+            the_list.insert(index,num)
+            
+        elif 'pop' in command:
+            the_list.pop()
+         
+        elif 'sort' in command:
+            the_list.sort()
+        
+        elif 'reverse' in command:
+            the_list.reverse()
+        
+        elif 'remove' in command:
+            num=int(parts[1])
+            the_list.remove(num)
+            
+        elif 'print' in command:
+            print(the_list)
+    
+    
+    N = int(input())
+    
+    my_list = []
+    for i in range(N):
+        command = input()
+        edit_list(command,my_list)
+    
+    
